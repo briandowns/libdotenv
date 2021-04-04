@@ -1,0 +1,11 @@
+*.o
+*.so
+*.dynlib
+
+.vscode/*
+
+bin/*
+libdotenv
+.env
+libdotenv.dylib
+libdotenv.so
