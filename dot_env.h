@@ -112,10 +112,9 @@ env_load(const char *path, const int overwrite)
         if (COMMENT_CHAR == line[0] || isspace(line[0])) {
             continue;
         }
-
-        char *token = line;
-        char *key = strsep(&token, SEPERATOR);
-        char *value = strsep(&token, NEW_LINE);
+        
+        char *key = strsep(&line, SEPERATOR);
+        char *value = strsep(&line, NEW_LINE);
 
         replace_double_quotes(value);
 
