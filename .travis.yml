@@ -3,6 +3,6 @@ compiler:
     - clang
     - gcc
 script:
-    - make test
+    - cc -o libdotenv example/main.c
 after_success:
     - bash <(curl -s https://codecov.io/bash)
