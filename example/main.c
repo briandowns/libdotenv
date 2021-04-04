@@ -5,7 +5,7 @@
 int
 main(int argc, char **argv)
 {
-    env_load("./config.env", 0);
+    env_load("", 0);
 
     printf("server: %s\n", getenv("SERVER"));
     printf("user: %s\n", getenv("USER"));
