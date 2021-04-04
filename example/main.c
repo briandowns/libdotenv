@@ -17,7 +17,5 @@ main(int argc, char **argv)
     printf("outer space: %s\n", getenv("OUTER_SPACE"));
     printf("multi line: %s\n", getenv("MULTILINE"));
 
-    printf("multi line: %s\n", getenv("DB_USER"));
-
     return 0;
 }
