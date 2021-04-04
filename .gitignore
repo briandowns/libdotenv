@@ -6,6 +6,6 @@
 
 bin/*
 libdotenv
-.env
+*.env
 libdotenv.dylib
 libdotenv.so

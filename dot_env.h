@@ -78,8 +78,8 @@ replace_double_quotes(char *value)
 }
 
 /**
- * env_load loads all entries in the found .env. If a path is
- * provided, the .env file is looked for there. An option to 
+ * env_load loads all entries in the local .env. If a path is
+ * provided, the file is looked for there. An option to 
  * overwrite existing values can be provided by passing a value 
  * greater than 0. Otherwise the value isn't overwritten.
  * 
@@ -95,7 +95,7 @@ env_load(const char *path, const int overwrite)
     if (path == NULL || path[0] == '\0') {
         strcpy(full_path, ENV_FILE_NAME);
     } else {
-        sprintf(full_path, "%s/.env", path);
+        strcpy(full_path, path);
     }
 
     FILE* f = fopen(full_path, "rb");
