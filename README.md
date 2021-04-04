@@ -1,6 +1,6 @@
 # libdotenv
 
-[![Build Status](https://travis-ci.org/briandowns/libdotenv.svg?branch=master)](https://travis-ci.org/briandowns/libdotenv)
+[![Build Status](https://travis-ci.com/briandowns/libdotenv.svg?branch=master)](https://travis-ci.com/briandowns/libdotenv)
 
 libdotenv is a C single-headerlibrary providing the ability to load values from a `.env` file into environment variables.
 
