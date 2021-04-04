@@ -113,22 +113,18 @@ env_load(const char *path, const int overwrite)
             continue;
         }
 
-        char *key, *value;
-        char *token, *string, *tofree;
-
-        tofree = string = strdup(line);
-        key = strsep(&string, SEPERATOR);
-        value = strsep(&string, NEW_LINE);
+        char *token = strdup(line);
+        char *key = strsep(&token, SEPERATOR);
+        char *value = strsep(&token, NEW_LINE);
 
         replace_double_quotes(value);
 
         if (setenv(key, trim_whitespace(value), overwrite) != 0) {
+            fclose(f);
             return 1;
         }
-            
-        free(token);
     }
-   
+
     fclose(f);
     free(line);
 
