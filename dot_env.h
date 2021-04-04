@@ -113,7 +113,7 @@ env_load(const char *path, const int overwrite)
             continue;
         }
 
-        char *token = strdup(line);
+        char *token = line;
         char *key = strsep(&token, SEPERATOR);
         char *value = strsep(&token, NEW_LINE);
 
@@ -121,6 +121,7 @@ env_load(const char *path, const int overwrite)
 
         if (setenv(key, trim_whitespace(value), overwrite) != 0) {
             fclose(f);
+            free(line);
             return 1;
         }
     }
