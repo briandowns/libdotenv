@@ -5,7 +5,7 @@
 int
 main(int argc, char **argv)
 {
-    env_load("", 0);
+    env_load("./config.env", 0);
 
     printf("server: %s\n", getenv("SERVER"));
     printf("user: %s\n", getenv("USER"));
@@ -16,6 +16,8 @@ main(int argc, char **argv)
     printf("inner space: %s\n", getenv("INNER_SPACE"));
     printf("outer space: %s\n", getenv("OUTER_SPACE"));
     printf("multi line: %s\n", getenv("MULTILINE"));
+
+    printf("multi line: %s\n", getenv("DB_USER"));
 
     return 0;
 }
