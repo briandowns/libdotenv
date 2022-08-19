@@ -126,7 +126,6 @@ env_load(const char *path, const int overwrite)
     }
 
     fclose(f);
-    free(line);
 
     return 0;
 }
