@@ -12,6 +12,45 @@
 #define NEW_LINE      "\n"
 
 
+static char*
+trim_whitespace(char *str)
+{
+    char *end;
+
+    while (isspace((unsigned char)*str)) {
+        str++;
+    }
+
+    if (*str == 0) {
+        return str;
+    }
+
+    end = str + strlen(str) - 1;
+    while (end > str && isspace((unsigned char)*end)) {
+        end--;
+    }
+
+    end[1] = '\0';
+
+    return str;
+}
+
+static int
+replace_double_quotes(char *value)
+{
+    if (value == NULL || strlen(value) == 0) {
+        return 0;
+    }
+
+    char last = strlen(value)-1;
+    if (value[0] == '\'' && value[last] == '\'') {
+        value[0] = '"';
+        value[last] = '"';
+    }
+
+    return 0;
+}
+
 int
 env_load(const char *path, const int overwrite)
 {
